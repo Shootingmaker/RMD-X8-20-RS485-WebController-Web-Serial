@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>RMD X8-20 RS485 Web Controller + Live Charts</title>
+<style>
+  :root{--bg:#0b1020;--fg:#e5e9f7;--muted:#9aa5cf;--card:#121735;--ok:#67ff9b;--err:#ff7b7b;--rx:#a5c7ff;--tx:#ffd479}
+  *{box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0}
+  main{max-width:1100px;margin:24px auto;padding:0 16px}
+  h1{font-size:1.6rem;margin:8px 0 16px}
+  fieldset{border:1px solid #2a345f;border-radius:14px;margin:14px 0;padding:12px 16px;background:var(--card)}
+  legend{font-weight:700;padding:0 8px}
+  label{display:inline-flex;flex-direction:column;gap:6px;margin:6px 16px 6px 0;font-size:.95rem}
+  input[type="number"],select{padding:8px 10px;border:1px solid #3c4a7e;border-radius:10px;background:#0f1633;color:var(--fg)}
+  input[type="checkbox"]{transform:scale(1.2)}
+  button{padding:9px 14px;border:1px solid #445399;border-radius:12px;background:#1a2350;color:var(--fg);cursor:pointer}
+  button:hover{filter:brightness(1.1)}
+  button:disabled{opacity:.55;cursor:not-allowed}
+  .row{display:flex;flex-wrap:wrap;gap:12px;align-items:end}
+  .log{white-space:pre-wrap;background:#0f1633;color:#cfe1ff;padding:12px;border-radius:12px;height:220px;overflow:auto;border:1px solid #2a345f}
+  .ok{color:var(--ok)}.err{color:var(--err)}.rx{color:var(--rx)}.tx{color:var(--tx)}
+  small{color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .card{background:#0f1633;border:1px solid #26315d;border-radius:12px;padding:12px}
+  .metric{font-size:2rem;font-weight:700}
+  .unit{font-size:.9rem;color:var(--muted);margin-left:6px}
+  canvas{background:#0f1633;border:1px solid #26315d;border-radius:12px}
+  @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+  <h1>RMD X8-20 RS485 Web Controller <span style="color:#9aa5cf">/ Web Serial</span></h1>
+
+  <fieldset>
+    <legend>シリアル接続</legend>
+    <div class="row">
+      <label>ボーレート
+        <select id="baud">
+          <option>115200</option>
+          <option>500000</option>
+          <option selected>1000000</option>
+          <option>1500000</option>
+          <option>2500000</option>
+        </select>
+      </label>
+      <label>モーターID (1–32)
+        <input id="motorId" type="number" min="1" max="32" value="1">
+      </label>
+      <label style="flex-direction:row;gap:10px;align-items:center;margin-top:22px">RTS (RE/DE兼用)
+        <input id="rts" type="checkbox">
+      </label>
+      <div class="row" style="gap:8px">
+        <button id="connectBtn">ポート選択 & 接続</button>
+        <button id="disconnectBtn" disabled>切断</button>
+      </div>
+    </div>
+    <small>RS485: 8N1。フレーム = <code>0x3E, ID, 0x08, D0..D7, CRC16(L), CRC16(H)</code>。CRC16はModbus/IBM方式。</small>
+  </fieldset>
+
+  <fieldset>
+    <legend>動作コマンド</legend>
+    <div class="row">
+      <label>目標角度 (deg, 多回転座標)
+        <input id="deg" type="number" step="0.01" value="0">
+      </label>
+      <label>速度上限 (dps)
+        <input id="spd" type="number" min="0" max="32767" value="500">
+      </label>
+      <div class="row" style="gap:8px">
+        <button id="moveAbsBtn" disabled>絶対角度へ移動 (0xA4)</button>
+        <button id="stopBtn" disabled>停止 (0x81)</button>
+        <button id="shutdownBtn" disabled>シャットダウン (0x80)</button>
+        <button id="brakeReleaseBtn" disabled>ブレーキ開放 (0x77)</button>
+        <button id="brakeLockBtn" disabled>ブレーキロック (0x78)</button>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>ライブ数値</legend>
+    <div class="grid">
+      <div class="card"><div>温度</div><div class="metric"><span id="mTemp">--</span><span class="unit">°C</span></div></div>
+      <div class="card"><div>トルク電流</div><div class="metric"><span id="mCurr">--</span><span class="unit">A</span></div></div>
+      <div class="card"><div>速度</div><div class="metric"><span id="mSpd">--</span><span class="unit">dps</span></div></div>
+      <div class="card"><div>角度（単回転）</div><div class="metric"><span id="mAng">--</span><span class="unit">deg</span></div></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>ライブチャート（最新 ~60 秒）</legend>
+    <div class="grid">
+      <div class="card"><canvas id="chartSpeed" height="160"></canvas></div>
+      <div class="card"><canvas id="chartAngle" height="160"></canvas></div>
+      <div class="card" style="grid-column: span 2"><canvas id="chartCurrent" height="180"></canvas></div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>送受信ログ</legend>
+    <div class="log" id="log"></div>
+  </fieldset>
+</main>
+
+<!-- Chart.js (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+  // ===== Utilities =====
+  const logEl = document.getElementById('log');
+  const log = (msg, cls='')=>{
+    const time = new Date().toISOString().slice(11,19);
+    const div = document.createElement('div');
+    if (cls) div.className = cls;
+    div.textContent = `[${time}] ${msg}`;
+    logEl.appendChild(div);
+    logEl.scrollTop = logEl.scrollHeight;
+  };
+  const hex = (arr)=>Array.from(arr, b=>('0'+b.toString(16)).slice(-2)).join(' ').toUpperCase();
+
+  // CRC16 (Modbus/IBM), init 0xFFFF, poly 0xA001, LSB first
+  function crc16_modbus(bytes){
+    let crc = 0xFFFF;
+    for (let b of bytes){
+      crc ^= b;
+      for (let i=0;i<8;i++){
+        const lsb = crc & 1; crc >>= 1; if (lsb) crc ^= 0xA001;
+      }
+    }
+    return crc & 0xFFFF;
+  }
+
+  // Build RS485 frame: 0x3E, ID, 0x08, D0..D7, CRC16L, CRC16H
+  function frame(id, data8){
+    const raw = new Uint8Array([0x3E, id & 0xFF, 0x08, ...data8]);
+    const crc = crc16_modbus(raw);
+    const out = new Uint8Array(raw.length + 2);
+    out.set(raw,0);
+    out[out.length-2] = crc & 0xFF;         // CRC L
+    out[out.length-1] = (crc >> 8) & 0xFF;  // CRC H
+    return out;
+  }
+
+  // Build Absolute Position Closed-loop (0xA4)
+  function buildA4(speed_dps, angle_deg){
+    const spd = Math.max(0, Math.min(0xFFFF, Math.round(speed_dps)));
+    const angle_cnt = Math.round(angle_deg * 100); // 0.01°/LSB (int32)
+    const d = new Uint8Array(8);
+    d[0] = 0xA4; d[1] = 0x00; d[2] = spd & 0xFF; d[3] = (spd>>8)&0xFF;
+    let v = angle_cnt >>> 0; // to uint32, little endian
+    d[4] = v & 0xFF; d[5] = (v>>8)&0xFF; d[6] = (v>>16)&0xFF; d[7] = (v>>24)&0xFF;
+    return d;
+  }
+  const D0_ONLY = { STOP:0x81, SHUTDOWN:0x80, BRAKE_RELEASE:0x77, BRAKE_LOCK:0x78 };
+  function buildSimple(d0){ const d=new Uint8Array(8); d[0]=d0&0xFF; return d; }
+
+  // ===== Live metrics storage (rolling window 60s) =====
+  const MAX_SECONDS = 60;
+  const samples = []; // {t, temp, curr, spd, ang}
+  function pushSample(s){
+    const now = performance.now()/1000; // seconds
+    s.t = now; samples.push(s);
+    // Drop older than 60s
+    while (samples.length && now - samples[0].t > MAX_SECONDS) samples.shift();
+    updateMetrics();
+    updateCharts();
+  }
+
+  // ===== Charts =====
+  const speedCtx = document.getElementById('chartSpeed');
+  const angleCtx = document.getElementById('chartAngle');
+  const currentCtx = document.getElementById('chartCurrent');
+
+  function makeChart(ctx, label, yTitle){
+    return new Chart(ctx, {
+      type: 'line',
+      data: { labels: [], datasets: [{ label, data: [], borderWidth: 2, pointRadius: 0, tension: 0.2 }] },
+      options: {
+        responsive: true,
+        animation: false,
+        scales: {
+          x: { title: { display: true, text: 'Time (s)' }, ticks: { maxTicksLimit: 6 } },
+          y: { title: { display: true, text: yTitle } }
+        },
+        plugins: { legend: { display: false } }
+      }
+    });
+  }
+  const speedChart = makeChart(speedCtx, 'Speed', 'dps');
+  const angleChart = makeChart(angleCtx, 'Angle (single-turn)', 'deg');
+  const currentChart = makeChart(currentCtx, 'Current', 'A');
+
+  function updateCharts(){
+    const t0 = samples.length ? samples[0].t : 0;
+    const xs = samples.map(s => (s.t - t0).toFixed(1));
+    speedChart.data.labels = xs; angleChart.data.labels = xs; currentChart.data.labels = xs;
+    speedChart.data.datasets[0].data = samples.map(s => s.spd);
+    angleChart.data.datasets[0].data = samples.map(s => s.ang);
+    currentChart.data.datasets[0].data = samples.map(s => s.curr);
+    speedChart.update(); angleChart.update(); currentChart.update();
+  }
+
+  // ===== Live metric tiles =====
+  const mTemp = document.getElementById('mTemp');
+  const mCurr = document.getElementById('mCurr');
+  const mSpd  = document.getElementById('mSpd');
+  const mAng  = document.getElementById('mAng');
+  function updateMetrics(){
+    const s = samples[samples.length-1]; if(!s) return;
+    mTemp.textContent = (s.temp ?? NaN).toFixed?.(0) ?? '--';
+    mCurr.textContent = (s.curr ?? NaN).toFixed?.(2) ?? '--';
+    mSpd.textContent  = (s.spd  ?? NaN).toFixed?.(0) ?? '--';
+    mAng.textContent  = (s.ang  ?? NaN).toFixed?.(2) ?? '--';
+  }
+
+  // ===== Web Serial =====
+  const baudSel = document.getElementById('baud');
+  const idInput = document.getElementById('motorId');
+  const rtsChk = document.getElementById('rts');
+  const connectBtn = document.getElementById('connectBtn');
+  const disconnectBtn = document.getElementById('disconnectBtn');
+  const moveAbsBtn = document.getElementById('moveAbsBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const shutdownBtn = document.getElementById('shutdownBtn');
+  const brakeReleaseBtn = document.getElementById('brakeReleaseBtn');
+  const brakeLockBtn = document.getElementById('brakeLockBtn');
+  const degInput = document.getElementById('deg');
+  const spdInput = document.getElementById('spd');
+
+  let port, reader, writer, readLoopActive=false;
+  async function setButtons(connected){
+    connectBtn.disabled = connected; disconnectBtn.disabled = !connected;
+    moveAbsBtn.disabled = !connected; stopBtn.disabled = !connected;
+    shutdownBtn.disabled = !connected; brakeReleaseBtn.disabled = !connected; brakeLockBtn.disabled = !connected;
+  }
+
+  async function openPort(){
+    if(!('serial' in navigator)){
+      alert('このブラウザは Web Serial に未対応です。Chrome/Edge を使用してください。');
+      return;
+    }
+    try{
+      port = await navigator.serial.requestPort();
+      await port.open({ baudRate: parseInt(baudSel.value,10), dataBits:8, stopBits:1, parity:'none', bufferSize: 4096 });
+      if (rtsChk.checked) await port.setSignals({ requestToSend: true });
+      writer = port.writable.getWriter();
+      readLoopActive = true; startReadLoop();
+      await setButtons(true); log('接続しました。','ok');
+    }catch(e){ log('接続に失敗: '+e.message,'err'); }
+  }
+  async function closePort(){
+    try{
+      readLoopActive = false; if(reader) try{ await reader.cancel(); }catch{}
+      if(writer){ writer.releaseLock(); writer = null; }
+      if(port){ try{ await port.close(); }catch{} port = null; }
+      await setButtons(false); log('切断しました。','ok');
+    }catch(e){ log('切断エラー: '+e.message,'err'); }
+  }
+
+  // Byte queue for framing
+  const q = [];
+  function qPush(u8){ for(const b of u8) q.push(b); }
+  function tryExtractFrame(){
+    // frame: 13 bytes => 0x3E ID 0x08 D0..D7 CRCL CRCH
+    while (q.length >= 13){
+      // find header 0x3E
+      let idx = q.indexOf(0x3E);
+      if (idx === -1){ q.length = 0; return null; }
+      if (idx > 0) q.splice(0, idx);
+      if (q.length < 13) return null;
+      const view = q.slice(0, 13);
+      const lenOK = view[2] === 0x08;
+      if (!lenOK){ q.shift(); continue; }
+      const raw = new Uint8Array(view.slice(0, 11)); // without CRC
+      const crcRecv = view[11] | (view[12]<<8);
+      const crcCalc = crc16_modbus(raw);
+      if (crcRecv !== crcCalc){
+        log('CRC不一致: '+hex(view)+' (calc='+crcCalc.toString(16)+')','err');
+        q.shift(); // resync
+        continue;
+      }
+      // valid frame; remove it from queue
+      q.splice(0, 13);
+      return new Uint8Array(view);
+    }
+    return null;
+  }
+
+  async function startReadLoop(){
+    try{
+      while (port && port.readable && readLoopActive){
+        reader = port.readable.getReader();
+        try{
+          while(true){
+            const { value, done } = await reader.read();
+            if(done) break;
+            if(value && value.length){
+              qPush(value); log('RX  '+hex(value),'rx');
+              let f; while ((f = tryExtractFrame())) decodeFrame(f);
+            }
+          }
+        } finally { reader.releaseLock(); }
+      }
+    } catch(e){ log('受信ループ停止: '+e.message,'err'); }
+  }
+
+  async function send(bytes){
+    if(!writer){ log('未接続です。','err'); return; }
+    try{ await writer.write(bytes); log('TX  '+hex(bytes),'tx'); }
+    catch(e){ log('送信エラー: '+e.message,'err'); }
+  }
+
+  // ===== Frame decoder =====
+  function toInt16(lsb, msb){ let v = (msb<<8)|lsb; if (v & 0x8000) v = v - 0x10000; return v; }
+  function toUint16(lsb, msb){ return (msb<<8)|lsb; }
+  function toInt32LE(b4,b5,b6,b7){ let v=(b7<<24)|(b6<<16)|(b5<<8)|b4; v|=0; return v; }
+
+  function decodeFrame(frame){
+    // frame: [0]=0x3E, [1]=ID, [2]=0x08, [3..10]=D0..D7, [11]=CRCL, [12]=CRCH
+    const id  = frame[1];
+    const D0  = frame[3];
+    const D1  = frame[4], D2=frame[5], D3=frame[6], D4=frame[7], D5=frame[8], D6=frame[9], D7=frame[10];
+
+    // Common interpretation (for many replies, e.g., 0xA4):
+    // D1: 温度(°C) [u8]
+    // D2..D3: トルク電流 ×0.01A [int16]
+    // D4..D5: 速度 dps [int16]
+    // D6..D7: 単回転角 0.01° [int16]
+    const temp = D1;
+    const curr = toInt16(D2,D3) * 0.01;
+    const spd  = toInt16(D4,D5);
+    const ang  = toInt16(D6,D7) / 100.0;
+
+    // For 0xA4 (absolute move) request, D4..D7 in request were int32 angle; reply uses the compact status layout above.
+
+    // Update live tiles/charts
+    pushSample({ temp, curr, spd, ang });
+
+    // Extra logging by command
+    let info = '';
+    if (D0 === 0xA4) info = `A4応答: Temp=${temp}°C, I=${curr.toFixed(2)}A, Spd=${spd}dps, Angle=${ang.toFixed(2)}°`;
+    else if (D0 === 0x81) info = 'STOP 応答';
+    else if (D0 === 0x80) info = 'SHUTDOWN 応答';
+    else if (D0 === 0x77) info = 'BRAKE RELEASE 応答';
+    else if (D0 === 0x78) info = 'BRAKE LOCK 応答';
+    else info = `D0=0x${D0.toString(16).toUpperCase()} 応答`;
+    log(`解析: ID=${id}, ${info}`,'ok');
+  }
+
+  // ===== UI Handlers =====
+  connectBtn.onclick = openPort; disconnectBtn.onclick = closePort;
+
+  moveAbsBtn.onclick = async ()=>{
+    const id = Math.max(1, Math.min(32, parseInt(idInput.value,10)||1));
+    const deg = parseFloat(degInput.value||'0');
+    const spd = parseInt(spdInput.value||'500',10);
+    await send(frame(id, buildA4(spd, deg)));
+  };
+
+  stopBtn.onclick = async ()=>{ const id = clampId(); await send(frame(id, buildSimple(D0_ONLY.STOP))); };
+  shutdownBtn.onclick = async ()=>{ const id = clampId(); await send(frame(id, buildSimple(D0_ONLY.SHUTDOWN))); };
+  brakeReleaseBtn.onclick = async ()=>{ const id = clampId(); await send(frame(id, buildSimple(D0_ONLY.BRAKE_RELEASE))); };
+  brakeLockBtn.onclick = async ()=>{ const id = clampId(); await send(frame(id, buildSimple(D0_ONLY.BRAKE_LOCK))); };
+  function clampId(){ return Math.max(1, Math.min(32, parseInt(idInput.value,10)||1)); }
+
+  // ページ離脱時に安全に切断
+  window.addEventListener('beforeunload', closePort);
+
+  // 有効状態の切替（ポートオープン時に呼ぶ）
+  (async()=>{ await setButtons(false); })();
+</script>
+
+<script>
+/* === File-based command bridge (no server) ================================
+   他プログラム -> command.txt（1行1コマンド）
+   本ページ   -> result.txt に応答を追記、metrics.json に最新値（任意）
+   コマンド例: ABS 90 500 / STOP / SHUTDOWN / BRAKE ON|OFF / STATUS / ID 2 / BAUD 115200
+===========================================================================*/
+(function(){
+  // ---- UI を動的に挿入 ---------------------------------------------------
+  const fs = document.createElement('fieldset');
+  fs.innerHTML = `
+    <legend>外部連携（ファイル連携コマンド）</legend>
+    <div class="row">
+      <button id="pickDirBtn">フォルダ選択</button>
+      <span id="pickedDirLabel" style="min-width:300px"></span>
+    </div>
+    <div class="row">
+      <label>コマンドファイル名
+        <input id="cmdFileName" type="text" value="command.txt">
+      </label>
+      <label>結果ファイル名
+        <input id="resFileName" type="text" value="result.txt">
+      </label>
+      <label>監視周期 (ms)
+        <input id="bridgeMs" type="number" min="50" step="50" value="200">
+      </label>
+      <label style="flex-direction:row;gap:8px;align-items:center;margin-top:22px">
+        メトリクスJSON出力
+        <input id="metricsOut" type="checkbox">
+      </label>
+      <div class="row" style="gap:8px">
+        <button id="bridgeStartBtn" disabled>監視開始</button>
+        <button id="bridgeStopBtn" disabled>監視停止</button>
+      </div>
+    </div>
+    <small>他プログラムは「command.txt」に1行ずつコマンドを追記。処理後は「result.txt」に応答を書き出し、「command.txt」を空にします。</small>
+  `;
+  const legends = Array.from(document.querySelectorAll('legend'));
+  const pollLegend = legends.find(l => l.textContent.includes('状態ポーリング'));
+  const liveLegend = legends.find(l => l.textContent.includes('ライブ数値'));
+  if (pollLegend) pollLegend.parentElement.insertAdjacentElement('afterend', fs);
+  else if (liveLegend) liveLegend.parentElement.insertAdjacentElement('beforebegin', fs);
+  else (document.querySelector('main')||document.body).appendChild(fs);
+
+  // ---- 要素参照 -----------------------------------------------------------
+  const pickDirBtn = fs.querySelector('#pickDirBtn');
+  const pickedDirLabel = fs.querySelector('#pickedDirLabel');
+  const cmdFileNameInput = fs.querySelector('#cmdFileName');
+  const resFileNameInput = fs.querySelector('#resFileName');
+  const bridgeMsInput = fs.querySelector('#bridgeMs');
+  const metricsOutChk = fs.querySelector('#metricsOut');
+  const bridgeStartBtn = fs.querySelector('#bridgeStartBtn');
+  const bridgeStopBtn = fs.querySelector('#bridgeStopBtn');
+
+  // ---- 変数 ---------------------------------------------------------------
+  let dirHandle = null;
+  let bridgeTimer = null;
+  let lastCmdMtime = 0;
+  let lastMetricsWrite = 0;
+
+  // ---- フォルダ選択／開始・停止 ------------------------------------------
+  async function pickDir(){
+    try{
+      dirHandle = await window.showDirectoryPicker();
+      pickedDirLabel.textContent = dirHandle.name || '(選択済)';
+      bridgeStartBtn.disabled = false; bridgeStopBtn.disabled = true;
+      log('コマンドフォルダ選択: ' + pickedDirLabel.textContent, 'ok');
+    }catch(e){ log('フォルダ選択キャンセル/失敗: ' + e.message, 'err'); }
+  }
+  function startBridge(){
+    if(!dirHandle){ log('フォルダ未選択', 'err'); return; }
+    if(bridgeTimer) return;
+    const ms = Math.max(50, parseInt(bridgeMsInput.value||'200',10));
+    bridgeTimer = setInterval(processCommandFile, ms);
+    bridgeStartBtn.disabled = true; bridgeStopBtn.disabled = false;
+    log(`ファイル連携開始: every ${ms} ms`, 'ok');
+  }
+  function stopBridge(){
+    if (bridgeTimer){ clearInterval(bridgeTimer); bridgeTimer = null; }
+    bridgeStartBtn.disabled = false; bridgeStopBtn.disabled = true;
+    log('ファイル連携停止', 'ok');
+  }
+
+  // ---- ファイル監視処理 ---------------------------------------------------
+  async function processCommandFile(){
+    try{
+      const cmdName = cmdFileNameInput.value || 'command.txt';
+      const fileHandle = await dirHandle.getFileHandle(cmdName, { create: true });
+      const f = await fileHandle.getFile();
+      if (f.size === 0) return;
+      if (f.lastModified <= lastCmdMtime) return;
+      const text = await f.text();
+      lastCmdMtime = f.lastModified;
+      const lines = text.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+      const out = [];
+      for (const line of lines){
+        const rsp = await handleBridgeCmd(line);
+        out.push(`[${new Date().toISOString()}] ${rsp}`);
+      }
+      await appendResult(out.join('\n') + '\n');
+      const w = await fileHandle.createWritable();
+      await w.write(''); await w.close(); // truncate
+    }catch(e){ log('ファイル連携エラー: ' + e.message, 'err'); }
+  }
+  async function appendResult(s){
+    const resName = resFileNameInput.value || 'result.txt';
+    const fh = await dirHandle.getFileHandle(resName, { create: true });
+    const file = await fh.getFile();
+    const w = await fh.createWritable({ keepExistingData: true });
+    await w.write({ type:'write', position: file.size, data: s });
+    await w.close();
+  }
+
+  // ---- コマンドパーサ -----------------------------------------------------
+  async function handleBridgeCmd(line){
+    const parts = line.split(/\s+/);
+    const cmd = (parts.shift()||'').toUpperCase();
+    try{
+      if (cmd === 'ABS'){
+        const deg = parseFloat(parts[0]); const spd = parseInt(parts[1]||'500',10);
+        if (Number.isNaN(deg)) return 'ERR: ABS <deg> [spd]';
+        const id = clampId(); await send(frame(id, buildA4(spd, deg)));
+        return `OK: A4 deg=${deg}, spd=${spd}`;
+      } else if (cmd === 'STOP'){
+        await send(frame(clampId(), buildSimple(0x81))); return 'OK: STOP';
+      } else if (cmd === 'SHUTDOWN'){
+        await send(frame(clampId(), buildSimple(0x80))); return 'OK: SHUTDOWN';
+      } else if (cmd === 'BRAKE'){
+        const on = (parts[0]||'').toUpperCase();
+        if (on==='ON'){ await send(frame(clampId(), buildSimple(0x78))); return 'OK: BRAKE LOCK'; }
+        if (on==='OFF'){ await send(frame(clampId(), buildSimple(0x77))); return 'OK: BRAKE RELEASE'; }
+        return 'ERR: BRAKE ON|OFF';
+      } else if (cmd === 'STATUS'){
+        await send(frame(clampId(), buildSimple(0x9C)));
+        const s = samples[samples.length-1];
+        if (s) return `OK: STATUS sent; temp=${s.temp}C, I=${s.curr}A, spd=${s.spd}dps, ang=${s.ang}deg`;
+        return 'OK: STATUS sent';
+      } else if (cmd === 'ID'){
+        const n = parseInt(parts[0]||'',10);
+        if (!(n>=1 && n<=32)) return 'ERR: ID 1..32';
+        document.getElementById('motorId').value = String(n); return `OK: ID=${n}`;
+      } else if (cmd === 'BAUD'){
+        const b = parseInt(parts[0]||'',10);
+        if (!b) return 'ERR: BAUD <bps>';
+        document.getElementById('baud').value = String(b);
+        if (port){ try{ await port.close(); await port.open({ baudRate: b, dataBits:8, stopBits:1, parity:'none', bufferSize:4096 }); writer = port.writable.getWriter(); }catch(e){ return 'ERR: reopen failed: '+e.message; } }
+        return `OK: BAUD=${b}`;
+      } else {
+        return 'ERR: Unknown cmd';
+      }
+    }catch(e){ return 'ERR: ' + e.message; }
+  }
+
+  // ---- metrics.json（任意） ----------------------------------------------
+  async function maybeWriteMetrics(){
+    if (!dirHandle || !metricsOutChk.checked) return;
+    const now = performance.now(); if (now - lastMetricsWrite < 200) return; lastMetricsWrite = now;
+    const s = samples[samples.length-1]; if (!s) return;
+    const data = JSON.stringify({ temp:s.temp, current:s.curr, speed:s.spd, angle:s.ang, t: Date.now() });
+    const fh = await dirHandle.getFileHandle('metrics.json', { create:true });
+    const w = await fh.createWritable(); await w.write(data); await w.close();
+  }
+  // pushSample をフックして metrics.json を更新
+  if (typeof window.pushSample === 'function'){
+    const _orig = window.pushSample; window.pushSample = function(s){ _orig(s); try{ maybeWriteMetrics(); }catch{} };
+  }
+
+  // ---- イベント -----------------------------------------------------------
+  pickDirBtn.onclick = pickDir;
+  bridgeStartBtn.onclick = startBridge;
+  bridgeStopBtn.onclick  = stopBridge;
+  window.addEventListener('beforeunload', ()=>{ try{ stopBridge(); }catch{} });
+})();
+</script>
+
+</body>
+</html>

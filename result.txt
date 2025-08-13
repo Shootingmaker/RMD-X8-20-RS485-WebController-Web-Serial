@@ -1,0 +1,581 @@
+[2025-08-13T12:28:34.373Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:28:34.373Z] OK: ID=1
+[2025-08-13T12:28:34.373Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:28:34.374Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:28:34.375Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:28:34.375Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:28:34.375Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:28:34.375Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:29:11.801Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:29:11.801Z] OK: ID=1
+[2025-08-13T12:29:11.802Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:29:11.802Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:29:11.803Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:29:11.803Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:29:11.803Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:29:11.803Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:29:41.784Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:29:41.784Z] OK: ID=1
+[2025-08-13T12:29:41.785Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:29:41.785Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:29:41.785Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:30:15.998Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:30:15.998Z] OK: ID=1
+[2025-08-13T12:30:15.998Z] OK: STATUS sent; temp=26C, I=-0.02A, spd=1dps, ang=0.89deg
+[2025-08-13T12:30:15.999Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:30:28.005Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:30:28.005Z] OK: ID=1
+[2025-08-13T12:30:28.006Z] OK: STATUS sent; temp=26C, I=-0.02A, spd=1dps, ang=0.89deg
+[2025-08-13T12:30:28.006Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:30:49.994Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:30:49.994Z] OK: ID=1
+[2025-08-13T12:30:49.995Z] OK: STATUS sent; temp=26C, I=0.11A, spd=0dps, ang=0deg
+[2025-08-13T12:30:49.995Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:31:37.030Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:31:37.030Z] OK: ID=1
+[2025-08-13T12:31:37.031Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:37.031Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:31:37.032Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:37.032Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:31:37.033Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:37.033Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:31:39.032Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:31:39.032Z] OK: ID=1
+[2025-08-13T12:31:39.033Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:39.033Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:31:39.034Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:39.035Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:31:39.036Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:39.037Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:31:50.025Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:31:50.025Z] OK: ID=1
+[2025-08-13T12:31:50.026Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:50.026Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:31:50.027Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:50.027Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:31:50.027Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:31:50.028Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:31:59.018Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:31:59.018Z] OK: ID=1
+[2025-08-13T12:31:59.019Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:31:59.020Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:31:59.020Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:31:59.020Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:31:59.021Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:31:59.021Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:02.102Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:02.102Z] OK: ID=1
+[2025-08-13T12:32:02.102Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:02.103Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:32:02.103Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:02.103Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:32:02.103Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:02.104Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:03.138Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:03.138Z] OK: ID=1
+[2025-08-13T12:32:03.139Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:03.139Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:32:03.139Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:03.140Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:32:03.140Z] OK: STATUS sent; temp=26C, I=-0.1A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:03.140Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:09.024Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:09.024Z] OK: ID=1
+[2025-08-13T12:32:09.025Z] OK: STATUS sent; temp=27C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:32:09.025Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:32:09.026Z] OK: STATUS sent; temp=27C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:32:09.027Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:32:09.027Z] OK: STATUS sent; temp=27C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:32:09.028Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:15.029Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:15.029Z] OK: ID=1
+[2025-08-13T12:32:15.029Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:15.030Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:32:15.030Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:15.031Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:32:15.031Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:15.032Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:21.028Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:21.028Z] OK: ID=1
+[2025-08-13T12:32:21.028Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:21.029Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:32:21.029Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:21.030Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:32:21.030Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:21.030Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:24.033Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:24.033Z] OK: ID=1
+[2025-08-13T12:32:24.034Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:24.035Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:32:24.036Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:24.036Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:32:24.037Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:24.038Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:27.027Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:27.027Z] OK: ID=1
+[2025-08-13T12:32:27.028Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:27.029Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:32:27.030Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:27.031Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:32:27.032Z] OK: STATUS sent; temp=27C, I=0.15A, spd=-3dps, ang=0.89deg
+[2025-08-13T12:32:27.033Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:32.023Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:32.023Z] OK: ID=1
+[2025-08-13T12:32:32.024Z] OK: STATUS sent; temp=27C, I=0A, spd=0dps, ang=0.89deg
+[2025-08-13T12:32:32.024Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:32:32.025Z] OK: STATUS sent; temp=27C, I=0A, spd=0dps, ang=0.89deg
+[2025-08-13T12:32:32.025Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:32:32.025Z] OK: STATUS sent; temp=27C, I=0A, spd=0dps, ang=0.89deg
+[2025-08-13T12:32:32.026Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:44.033Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:44.033Z] OK: ID=1
+[2025-08-13T12:32:44.034Z] OK: STATUS sent; temp=27C, I=-0.05A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:44.035Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:46.032Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:46.032Z] OK: ID=1
+[2025-08-13T12:32:46.034Z] OK: STATUS sent; temp=27C, I=-0.05A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:46.034Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:47.024Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:47.024Z] OK: ID=1
+[2025-08-13T12:32:47.025Z] OK: STATUS sent; temp=27C, I=-0.05A, spd=2dps, ang=0.9deg
+[2025-08-13T12:32:47.025Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:32:52.144Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:32:52.144Z] OK: ID=1
+[2025-08-13T12:32:52.144Z] OK: STATUS sent; temp=27C, I=0.23A, spd=-3dps, ang=0.49deg
+[2025-08-13T12:32:52.145Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:33:02.026Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:33:02.026Z] OK: ID=1
+[2025-08-13T12:33:02.027Z] OK: STATUS sent; temp=27C, I=0.23A, spd=-3dps, ang=0.49deg
+[2025-08-13T12:33:02.028Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:33:07.111Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:33:07.111Z] OK: ID=1
+[2025-08-13T12:33:07.112Z] OK: STATUS sent; temp=27C, I=0.21A, spd=0dps, ang=0.49deg
+[2025-08-13T12:33:07.112Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:33:11.254Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:33:11.254Z] OK: ID=1
+[2025-08-13T12:33:11.255Z] OK: STATUS sent; temp=27C, I=0.21A, spd=0dps, ang=0.49deg
+[2025-08-13T12:33:11.255Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:33:12.289Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:33:12.289Z] OK: ID=1
+[2025-08-13T12:33:12.290Z] OK: STATUS sent; temp=27C, I=0.21A, spd=0dps, ang=0.49deg
+[2025-08-13T12:33:12.291Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:33:13.324Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:33:13.325Z] OK: ID=1
+[2025-08-13T12:33:13.325Z] OK: STATUS sent; temp=27C, I=0.21A, spd=0dps, ang=0.49deg
+[2025-08-13T12:33:13.326Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:33:32.218Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:33:32.218Z] OK: ID=1
+[2025-08-13T12:33:32.219Z] OK: STATUS sent; temp=27C, I=0A, spd=2dps, ang=0.5deg
+[2025-08-13T12:33:32.220Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:33:40.213Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:33:40.213Z] OK: ID=1
+[2025-08-13T12:33:40.214Z] OK: STATUS sent; temp=27C, I=0A, spd=2dps, ang=0.5deg
+[2025-08-13T12:33:40.215Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:33:40.216Z] OK: STATUS sent; temp=27C, I=0A, spd=2dps, ang=0.5deg
+[2025-08-13T12:33:40.216Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:33:40.217Z] OK: STATUS sent; temp=27C, I=0A, spd=2dps, ang=0.5deg
+[2025-08-13T12:33:40.218Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:33:54.218Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:33:54.218Z] OK: ID=1
+[2025-08-13T12:33:54.219Z] OK: STATUS sent; temp=27C, I=-0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:33:54.220Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:33:54.221Z] OK: STATUS sent; temp=27C, I=-0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:33:54.222Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:33:54.223Z] OK: STATUS sent; temp=27C, I=-0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:34:02.218Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:34:02.218Z] OK: ID=1
+[2025-08-13T12:34:02.220Z] OK: STATUS sent; temp=27C, I=-0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:34:02.221Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:34:02.222Z] OK: STATUS sent; temp=27C, I=-0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:34:07.214Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:34:07.214Z] OK: ID=1
+[2025-08-13T12:34:07.215Z] OK: STATUS sent; temp=27C, I=-0.1A, spd=0dps, ang=0.89deg
+[2025-08-13T12:34:07.216Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:34:07.217Z] OK: STATUS sent; temp=27C, I=-0.1A, spd=0dps, ang=0.89deg
+[2025-08-13T12:34:08.225Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:34:08.225Z] OK: ID=1
+[2025-08-13T12:34:08.226Z] OK: STATUS sent; temp=27C, I=-0.1A, spd=0dps, ang=0.89deg
+[2025-08-13T12:34:08.227Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:34:08.228Z] OK: STATUS sent; temp=27C, I=-0.1A, spd=0dps, ang=0.89deg
+[2025-08-13T12:34:25.721Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:34:25.721Z] OK: ID=1
+[2025-08-13T12:34:25.722Z] OK: STATUS sent; temp=27C, I=0.12A, spd=0dps, ang=0deg
+[2025-08-13T12:34:25.723Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:34:25.724Z] OK: STATUS sent; temp=27C, I=0.12A, spd=0dps, ang=0deg
+[2025-08-13T12:34:26.713Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:34:26.713Z] OK: ID=1
+[2025-08-13T12:34:26.714Z] OK: STATUS sent; temp=27C, I=0.12A, spd=0dps, ang=0deg
+[2025-08-13T12:34:26.714Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:34:26.715Z] OK: STATUS sent; temp=27C, I=0.12A, spd=0dps, ang=0deg
+[2025-08-13T12:35:12.656Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:35:12.656Z] OK: ID=1
+[2025-08-13T12:35:12.657Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:35:12.658Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:35:18.838Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:35:18.838Z] OK: ID=1
+[2025-08-13T12:35:18.839Z] OK: STATUS sent; temp=0C, I=0A, spd=0dps, ang=0deg
+[2025-08-13T12:35:18.840Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:35:24.835Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:35:24.835Z] OK: ID=1
+[2025-08-13T12:35:24.836Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-2dps, ang=0deg
+[2025-08-13T12:35:24.837Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:35:27.841Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:35:27.841Z] OK: ID=1
+[2025-08-13T12:35:27.842Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-2dps, ang=0deg
+[2025-08-13T12:35:27.843Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:35:48.003Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:35:48.003Z] OK: ID=1
+[2025-08-13T12:35:48.004Z] OK: STATUS sent; temp=27C, I=0.17A, spd=-2dps, ang=0deg
+[2025-08-13T12:35:48.005Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:35:48.994Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:35:48.994Z] OK: ID=1
+[2025-08-13T12:35:48.995Z] OK: STATUS sent; temp=27C, I=0.17A, spd=-2dps, ang=0deg
+[2025-08-13T12:35:48.996Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:35:49.991Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:35:49.991Z] OK: ID=1
+[2025-08-13T12:35:49.992Z] OK: STATUS sent; temp=27C, I=0.17A, spd=-2dps, ang=0deg
+[2025-08-13T12:35:49.993Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:35:50.997Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:35:50.997Z] OK: ID=1
+[2025-08-13T12:35:50.998Z] OK: STATUS sent; temp=27C, I=0.17A, spd=-2dps, ang=0deg
+[2025-08-13T12:35:50.999Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:01.683Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:36:01.683Z] OK: ID=1
+[2025-08-13T12:36:01.684Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:01.685Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:02.720Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:36:02.720Z] OK: ID=1
+[2025-08-13T12:36:02.721Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:02.722Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:03.767Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:36:03.767Z] OK: ID=1
+[2025-08-13T12:36:03.768Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:03.769Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:04.626Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:36:04.626Z] OK: ID=1
+[2025-08-13T12:36:04.627Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:04.629Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:05.630Z] ERR: reopen failed: Failed to execute 'close' on 'SerialPort': Cannot cancel a locked stream
+[2025-08-13T12:36:05.630Z] OK: ID=1
+[2025-08-13T12:36:05.631Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:05.633Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:33.671Z] OK: ID=1
+[2025-08-13T12:36:33.672Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:33.672Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:36.770Z] OK: ID=1
+[2025-08-13T12:36:36.771Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:36.772Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:42.079Z] OK: ID=1
+[2025-08-13T12:36:42.080Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:42.082Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:43.077Z] OK: ID=1
+[2025-08-13T12:36:43.079Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:43.080Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:44.074Z] OK: ID=1
+[2025-08-13T12:36:44.076Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:44.077Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:45.074Z] OK: ID=1
+[2025-08-13T12:36:45.075Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:45.076Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:46.086Z] OK: ID=1
+[2025-08-13T12:36:46.087Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:46.088Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:47.089Z] OK: ID=1
+[2025-08-13T12:36:47.091Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:47.092Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:48.097Z] OK: ID=1
+[2025-08-13T12:36:48.098Z] OK: STATUS sent; temp=27C, I=0.07A, spd=0dps, ang=0deg
+[2025-08-13T12:36:48.099Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:36:58.076Z] OK: ID=1
+[2025-08-13T12:36:58.077Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:36:58.078Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:00.086Z] OK: ID=1
+[2025-08-13T12:37:00.087Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:00.089Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:01.074Z] OK: ID=1
+[2025-08-13T12:37:01.075Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:01.076Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:03.178Z] OK: ID=1
+[2025-08-13T12:37:03.179Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:03.180Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:04.175Z] OK: ID=1
+[2025-08-13T12:37:04.176Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:04.177Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:05.176Z] OK: ID=1
+[2025-08-13T12:37:05.177Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:05.178Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:06.179Z] OK: ID=1
+[2025-08-13T12:37:06.181Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:06.183Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:07.182Z] OK: ID=1
+[2025-08-13T12:37:07.183Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:07.184Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:08.184Z] OK: ID=1
+[2025-08-13T12:37:08.186Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:08.187Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:09.196Z] OK: ID=1
+[2025-08-13T12:37:09.198Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:09.199Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:10.204Z] OK: ID=1
+[2025-08-13T12:37:10.205Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:10.206Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:12.270Z] OK: ID=1
+[2025-08-13T12:37:12.271Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:12.272Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:13.312Z] OK: ID=1
+[2025-08-13T12:37:13.313Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:13.314Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:37:17.172Z] OK: ID=1
+[2025-08-13T12:37:17.173Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:17.173Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:37:19.182Z] OK: ID=1
+[2025-08-13T12:37:19.184Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:19.185Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:37:23.709Z] OK: ID=1
+[2025-08-13T12:37:23.711Z] OK: STATUS sent; temp=27C, I=-0.01A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:37:23.712Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:29.806Z] OK: ID=1
+[2025-08-13T12:37:29.808Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:29.808Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:31.701Z] OK: ID=1
+[2025-08-13T12:37:31.703Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:31.705Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:37.668Z] OK: ID=1
+[2025-08-13T12:37:37.669Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:37.670Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:48.859Z] OK: ID=1
+[2025-08-13T12:37:48.860Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:48.861Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:49.427Z] OK: ID=1
+[2025-08-13T12:37:49.428Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:49.430Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:49.615Z] OK: ID=1
+[2025-08-13T12:37:49.616Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:49.617Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:50.026Z] OK: ID=1
+[2025-08-13T12:37:50.027Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:50.029Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:50.433Z] OK: ID=1
+[2025-08-13T12:37:50.434Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:50.435Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:50.943Z] OK: ID=1
+[2025-08-13T12:37:50.944Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:50.946Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:51.223Z] OK: ID=1
+[2025-08-13T12:37:51.224Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:51.225Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:51.621Z] OK: ID=1
+[2025-08-13T12:37:51.622Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:51.623Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:51.972Z] OK: ID=1
+[2025-08-13T12:37:51.973Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:51.974Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:52.473Z] OK: ID=1
+[2025-08-13T12:37:52.474Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:52.475Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:52.617Z] OK: ID=1
+[2025-08-13T12:37:52.618Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:52.619Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:37:56.623Z] OK: ID=1
+[2025-08-13T12:37:56.625Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:56.626Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:37:57.427Z] OK: ID=1
+[2025-08-13T12:37:57.429Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:57.431Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:37:58.146Z] OK: ID=1
+[2025-08-13T12:37:58.147Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:58.148Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:37:59.151Z] OK: ID=1
+[2025-08-13T12:37:59.152Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:59.152Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:37:59.816Z] OK: ID=1
+[2025-08-13T12:37:59.818Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:37:59.820Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:38:06.040Z] OK: ID=1
+[2025-08-13T12:38:06.041Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:06.042Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:38:06.859Z] OK: ID=1
+[2025-08-13T12:38:06.860Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:06.861Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:38:07.634Z] OK: ID=1
+[2025-08-13T12:38:07.636Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:07.637Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:38:08.442Z] OK: ID=1
+[2025-08-13T12:38:08.444Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:08.445Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:38:09.041Z] OK: ID=1
+[2025-08-13T12:38:09.043Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:09.044Z] OK: A4 deg=120, spd=500
+[2025-08-13T12:38:21.851Z] OK: ID=1
+[2025-08-13T12:38:21.853Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:21.854Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:21.855Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:25.645Z] OK: ID=1
+[2025-08-13T12:38:25.646Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:25.648Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:25.649Z] OK: STATUS sent; temp=28C, I=0.09A, spd=1dps, ang=0deg
+[2025-08-13T12:38:26.461Z] OK: ID=1
+[2025-08-13T12:38:26.462Z] OK: STATUS sent; temp=28C, I=-0.1A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:26.463Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:26.464Z] OK: STATUS sent; temp=28C, I=-0.1A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:27.017Z] OK: ID=1
+[2025-08-13T12:38:27.018Z] OK: STATUS sent; temp=28C, I=0.03A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:27.019Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:27.020Z] OK: STATUS sent; temp=28C, I=0.03A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:27.835Z] OK: ID=1
+[2025-08-13T12:38:27.837Z] OK: STATUS sent; temp=28C, I=0.03A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:27.838Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:27.839Z] OK: STATUS sent; temp=28C, I=0.03A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:28.487Z] OK: ID=1
+[2025-08-13T12:38:28.489Z] OK: STATUS sent; temp=27C, I=0.03A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:28.490Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:28.490Z] OK: STATUS sent; temp=27C, I=0.03A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:29.104Z] OK: ID=1
+[2025-08-13T12:38:29.105Z] OK: STATUS sent; temp=27C, I=0.03A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:29.107Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:29.108Z] OK: STATUS sent; temp=27C, I=0.03A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:29.634Z] OK: ID=1
+[2025-08-13T12:38:29.636Z] OK: STATUS sent; temp=28C, I=-0.16A, spd=3dps, ang=0.9deg
+[2025-08-13T12:38:29.637Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:29.637Z] OK: STATUS sent; temp=28C, I=-0.16A, spd=3dps, ang=0.9deg
+[2025-08-13T12:38:30.235Z] OK: ID=1
+[2025-08-13T12:38:30.237Z] OK: STATUS sent; temp=28C, I=-0.16A, spd=3dps, ang=0.9deg
+[2025-08-13T12:38:30.238Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:30.239Z] OK: STATUS sent; temp=28C, I=-0.16A, spd=3dps, ang=0.9deg
+[2025-08-13T12:38:31.434Z] OK: ID=1
+[2025-08-13T12:38:31.436Z] OK: STATUS sent; temp=28C, I=-0.16A, spd=3dps, ang=0.9deg
+[2025-08-13T12:38:31.438Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:31.441Z] OK: STATUS sent; temp=28C, I=-0.16A, spd=3dps, ang=0.9deg
+[2025-08-13T12:38:32.103Z] OK: ID=1
+[2025-08-13T12:38:32.104Z] OK: STATUS sent; temp=28C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:32.105Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:32.106Z] OK: STATUS sent; temp=28C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:32.638Z] OK: ID=1
+[2025-08-13T12:38:32.639Z] OK: STATUS sent; temp=28C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:32.640Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:32.641Z] OK: STATUS sent; temp=28C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:33.115Z] OK: ID=1
+[2025-08-13T12:38:33.116Z] OK: STATUS sent; temp=28C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:33.117Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:33.118Z] OK: STATUS sent; temp=28C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:33.636Z] OK: ID=1
+[2025-08-13T12:38:33.637Z] OK: STATUS sent; temp=28C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:33.638Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:33.639Z] OK: STATUS sent; temp=28C, I=0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:34.216Z] OK: ID=1
+[2025-08-13T12:38:34.217Z] OK: STATUS sent; temp=28C, I=0.06A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:34.219Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:34.220Z] OK: STATUS sent; temp=28C, I=0.06A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:34.694Z] OK: ID=1
+[2025-08-13T12:38:34.696Z] OK: STATUS sent; temp=28C, I=-0.05A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:34.697Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:34.699Z] OK: STATUS sent; temp=28C, I=-0.05A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:35.446Z] OK: ID=1
+[2025-08-13T12:38:35.449Z] OK: STATUS sent; temp=28C, I=-0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:35.450Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:35.451Z] OK: STATUS sent; temp=28C, I=-0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:36.034Z] OK: ID=1
+[2025-08-13T12:38:36.035Z] OK: STATUS sent; temp=28C, I=0.09A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:38:36.037Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:36.038Z] OK: STATUS sent; temp=28C, I=0.09A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:38:36.690Z] OK: ID=1
+[2025-08-13T12:38:36.692Z] OK: STATUS sent; temp=28C, I=-0.01A, spd=0dps, ang=0.9deg
+[2025-08-13T12:38:36.693Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:36.694Z] OK: STATUS sent; temp=28C, I=-0.01A, spd=0dps, ang=0.9deg
+[2025-08-13T12:38:37.038Z] OK: ID=1
+[2025-08-13T12:38:37.039Z] OK: STATUS sent; temp=28C, I=0.15A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:37.041Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:37.042Z] OK: STATUS sent; temp=28C, I=0.15A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:37.808Z] OK: ID=1
+[2025-08-13T12:38:37.810Z] OK: STATUS sent; temp=28C, I=-0.05A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:37.812Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:37.814Z] OK: STATUS sent; temp=28C, I=-0.05A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:38.263Z] OK: ID=1
+[2025-08-13T12:38:38.264Z] OK: STATUS sent; temp=28C, I=0.05A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:38.266Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:38.267Z] OK: STATUS sent; temp=28C, I=0.05A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:38.835Z] OK: ID=1
+[2025-08-13T12:38:38.837Z] OK: STATUS sent; temp=28C, I=-0.06A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:38.839Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:38.841Z] OK: STATUS sent; temp=28C, I=-0.06A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:39.436Z] OK: ID=1
+[2025-08-13T12:38:39.437Z] OK: STATUS sent; temp=28C, I=-0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:39.438Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:39.439Z] OK: STATUS sent; temp=28C, I=-0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:39.750Z] OK: ID=1
+[2025-08-13T12:38:39.752Z] OK: STATUS sent; temp=28C, I=-0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:39.753Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:39.754Z] OK: STATUS sent; temp=28C, I=-0.04A, spd=0dps, ang=0.89deg
+[2025-08-13T12:38:40.290Z] OK: ID=1
+[2025-08-13T12:38:40.291Z] OK: STATUS sent; temp=28C, I=-0.16A, spd=2dps, ang=0.9deg
+[2025-08-13T12:38:40.293Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:40.294Z] OK: STATUS sent; temp=28C, I=-0.16A, spd=2dps, ang=0.9deg
+[2025-08-13T12:38:50.571Z] OK: ID=1
+[2025-08-13T12:38:50.573Z] OK: STATUS sent; temp=28C, I=0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:38:50.574Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:38:50.575Z] OK: STATUS sent; temp=28C, I=0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:39:01.248Z] OK: ID=1
+[2025-08-13T12:39:01.250Z] OK: STATUS sent; temp=28C, I=0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:39:01.251Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:39:01.252Z] OK: STATUS sent; temp=28C, I=0.03A, spd=-1dps, ang=0.89deg
+[2025-08-13T12:39:10.717Z] OK: ID=1
+[2025-08-13T12:39:10.718Z] OK: STATUS sent; temp=28C, I=0.18A, spd=-3dps, ang=0deg
+[2025-08-13T12:39:10.719Z] OK: A4 deg=180, spd=500
+[2025-08-13T12:39:10.720Z] OK: STATUS sent; temp=28C, I=0.18A, spd=-3dps, ang=0deg
+[2025-08-13T12:39:17.036Z] OK: ID=1
+[2025-08-13T12:39:17.038Z] OK: STATUS sent; temp=28C, I=0.18A, spd=-3dps, ang=0deg
+[2025-08-13T12:39:17.041Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:39:17.043Z] OK: STATUS sent; temp=28C, I=0.18A, spd=-3dps, ang=0deg
+[2025-08-13T12:39:18.246Z] OK: ID=1
+[2025-08-13T12:39:18.247Z] OK: STATUS sent; temp=28C, I=-0.05A, spd=-1dps, ang=0deg
+[2025-08-13T12:39:18.249Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:39:18.252Z] OK: STATUS sent; temp=28C, I=-0.05A, spd=-1dps, ang=0deg
+[2025-08-13T12:39:55.166Z] OK: ID=1
+[2025-08-13T12:39:55.167Z] OK: STATUS sent; temp=28C, I=0.06A, spd=1dps, ang=0deg
+[2025-08-13T12:39:55.169Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:39:55.170Z] OK: STATUS sent; temp=28C, I=0.06A, spd=1dps, ang=0deg
+[2025-08-13T12:40:08.076Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:08.844Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:09.709Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:10.440Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:11.245Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:18.374Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:23.526Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:27.238Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:33.837Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:45.182Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:55.643Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:40:59.038Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:41:02.141Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:45.418Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:45.421Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:43:45.423Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:47.413Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:47.416Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:43:47.418Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:51.468Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:51.469Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:43:51.470Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:53.512Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:53.514Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:43:53.515Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:55.414Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:43:55.416Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:43:55.417Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:44:05.417Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:44:05.419Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:44:05.420Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:44:13.426Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:44:13.428Z] OK: A4 deg=90, spd=500
+[2025-08-13T12:44:19.426Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:44:31.421Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:45:15.428Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:45:19.413Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:45:31.426Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:45:44.118Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:46:09.597Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:46:35.202Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:46:46.031Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:46:54.819Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:47:05.646Z] OK: A4 deg=0, spd=500
+[2025-08-13T12:47:50.126Z] OK: A4 deg=0, spd=500

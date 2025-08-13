@@ -1,0 +1,21 @@
+使い方（ファイル連携）
+ページを開く → 「外部連携（ファイル連携コマンド）」のフォルダ選択 → 任意の空フォルダを選択
+
+監視開始
+
+他プログラム（任意言語）から、そのフォルダ内の command.txt に以下のように1行1コマンドで追記します
+
+ABS 90 500（絶対角90°、速度上限500 dps）
+STOP
+SHUTDOWN
+BRAKE ON
+BRAKE OFF
+STATUS
+ID 1
+BAUD 115200
+
+このHTMLは処理後に result.txt に OK: ... / ERR: ... を追記、command.txt を空に戻します
+
+「メトリクスJSON出力」にチェックで、最新値を metrics.json に定期書き出しします（約200ms間隔）
+
+備考: File System Access API は Chrome/Edge 等で有効です。初回のみユーザー操作でのフォルダ選択が必要（セキュリティ仕様）です。
